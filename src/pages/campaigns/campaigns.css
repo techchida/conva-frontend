@@ -1,0 +1,39 @@
+.builder label {
+  font-weight: 600;
+  margin-bottom: 8px;
+  font-size: .9rem;
+}
+
+
+.builder .input-area {
+  margin: 10px 0;
+}
+
+
+.listbox {
+  box-shadow: 0 2px 2px #e3e3e3;
+
+}
+
+input,
+.ant-select-selector,
+.yield {
+  background-color: rgba(48, 74, 166, 0.063) !important;
+}
+
+input:active,
+input:focus,
+.ant-select-selector:active {
+  background: transparent !important;
+}
+
+.xx-emoji span {
+  position: absolute;
+  font-weight: 800;
+  color: black;
+  margin-left: 20px;
+}
+
+.leadrow img {
+  height: 25px;
+}
