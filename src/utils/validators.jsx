@@ -20,3 +20,9 @@ export const authValidation = {
     },
   ],
 };
+
+export const appValidation = {
+  requiredField: (fieldName) => {
+    return [{ required: true, message: `please enter ${fieldName}` }];
+  },
+};

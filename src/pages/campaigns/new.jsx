@@ -1,9 +1,18 @@
-import { Button, Checkbox, Input, Select } from "antd";
+import { Button, Checkbox, Input, Select, Form, message, Modal } from "antd";
 import "./campaigns.css";
 import "./conva.css";
 import { useState } from "react";
-import { ArrowLeftOutlined } from "@ant-design/icons";
-import { Link } from "react-router-dom";
+import {
+  ArrowLeftOutlined,
+  CheckCircleOutlined,
+  QuestionCircleOutlined,
+} from "@ant-design/icons";
+import { Link, useNavigate } from "react-router-dom";
+import { useMutation } from "@tanstack/react-query";
+import { appServices } from "../../services/services";
+import Widget from "../../components/widget/widget";
+import { appValidation } from "../../utils/validators";
+import copy from "copy-to-clipboard";
 
 const NewCampaign = () => {
   const [campTitle, setCampTitle] = useState("How do you feel?");
@@ -14,52 +23,96 @@ const NewCampaign = () => {
   const [allowEmail, setAllowEmail] = useState(false);
   const [allowText, setAllowText] = useState(false);
   const [activeTye, setActiveType] = useState("emoji");
+  const [isLoading, setIsLoading] = useState(false);
+  const [messageApi, contextHolder] = message.useMessage();
+  const navigate = useNavigate();
+  const [exitModal, setExitModal] = useState(false);
+  const [completeModal, setCompleteModal] = useState(false);
+  const [embedURL, setEmbedURL] = useState("");
+
+  const { mutate } = useMutation({
+    mutationFn: (payload) => appServices.createCampaign(payload),
+    onError: (error) => {
+      messageApi.error(error.response.data.message || "something went wrong");
+    },
+    onSuccess: ({ status, data }) => {
+      if (status === 200) {
+        setEmbedURL(`${process.env.REACT_APP_BASEURL}/widget/${data?.id}`);
+        return setCompleteModal(true);
+      }
+
+      messageApi.error("oops! somehing went wrong. please try again ");
+    },
+    onSettled: (data) => {
+      setIsLoading(false);
+      console.cog("sakda", data);
+    },
+  });
 
   return (
     <div className="container my-10">
-      <div className="mb-6">
-        <Link
-          to="../campaigns"
-          className="mb-4 text-gray-500 cursor-pointer hover:text-blue-500"
-        >
-          <ArrowLeftOutlined />
-        </Link>
-        <h3 className="font-black text-xl  text-gray-700">New Campaign</h3>
+      {contextHolder}
+      <div className="mb-6 mt-6 items-center flex gap-6">
+        <div>
+          <h3 className="font-black text-xl  text-slate-700">New Campaign</h3>
+          <p className="text-gray-400">Create a new campaign</p>
+        </div>
       </div>
-      <div className="lg:grid grid-cols-12 gap-16 justify-between  builder">
-        <div className="col-span-6">
-          <div className="input-area">
-            <label>Campaign Name</label>
-            <Input placeholder="jane@doe.com" size="large" variant="filled" />
-          </div>
-          <div className="input-area">
-            <label>Title</label>
+      <Form
+        layout="vertical"
+        requiredMark={false}
+        onFinish={(payload) => {
+          setIsLoading(true);
+          mutate(payload);
+          console.log(payload);
+        }}
+        className="lg:grid grid-cols-12 gap-16 gap-y-10 mt-16 justify-between  builder"
+      >
+        <div className="col-span-6 mb-12">
+          <Form.Item
+            label="Campaign Name"
+            name="campaign"
+            rules={appValidation.requiredField("Campaign name")}
+          >
+            <Input
+              placeholder="My new campaign"
+              size="large"
+              variant="filled"
+            />
+          </Form.Item>
+          <Form.Item
+            label="Title"
+            name="title"
+            rules={appValidation.requiredField("Title")}
+          >
             <Input
               onChange={(e) => {
                 setCampTitle(e.target.value);
               }}
-              placeholder="jane@doe.com"
+              placeholder="How do you feel"
               size="large"
               variant="filled"
             />
-          </div>
-          <div className="input-area">
-            <label>
-              Subtitle <span className="text-gray-300">(Optional)</span>
-            </label>
+          </Form.Item>
+
+          <Form.Item label={"subtitle"} name="subtitle">
             <Input
               onChange={(e) => {
                 setCampSubtitle(e.target.value);
               }}
-              placeholder="jane@doe.com"
+              placeholder="Tell us how you feel about our app"
               size="large"
               variant="filled"
             />
-          </div>
-          <div className="input-area">
-            <label>Feedback Method</label>
+          </Form.Item>
+          <Form.Item
+            label="Feedback Method"
+            initialValue="Generic"
+            name="type"
+            rules={appValidation.requiredField("Feedback method")}
+          >
             <Select
-              defaultValue={"Generic"}
+              defaultValue="Generic"
               size="large"
               style={{ width: "100%" }}
               onChange={(type) => {
@@ -84,114 +137,101 @@ const NewCampaign = () => {
                 },
               ]}
             />
-          </div>
-          <div className="input-area ">
-            <Checkbox onChange={(e) => setAllowName(e.target.checked)}>
-              Accept name entry field
+          </Form.Item>
+          <Form.Item
+            label={""}
+            name="name"
+            valuePropName="checked"
+            initialValue={false}
+          >
+            <Checkbox
+              name="name"
+              onChange={(e) => setAllowName(e.target.checked)}
+            >
+              Collect users fullname
             </Checkbox>
-          </div>
-          <div className="input-area  ">
+          </Form.Item>
+          <Form.Item name="email" valuePropName="checked" initialValue={false}>
             <Checkbox onChange={(e) => setAllowEmail(e.target.checked)}>
-              Accept Email Address field
+              Collect e-mail Addresses
             </Checkbox>
-          </div>
-          <div className="input-area  ">
+          </Form.Item>
+          <Form.Item
+            name="comment"
+            valuePropName="checked"
+            initialValue={false}
+          >
             <Checkbox onChange={(e) => setAllowText(e.target.checked)}>
               Accept comment text field
             </Checkbox>
-          </div>
+          </Form.Item>
         </div>
         <div className="col-span-6">
-          <div className="my-6 rounded-xl yield">
-            <div className="py-24 flex justify-center items-center px-10 lg:px-20">
-              <div className="w-full">
-                <div className="xx-widget isActive w-full">
-                  <div className="xx-widget-box xx-slide">
-                    <div className="xx-submited xx-slide">
-                      <div>
-                        <div className="xx-checked">
-                          <span></span>
-                        </div>
-                        <p className="xx-txt">Thanks for your feedback.</p>
-                      </div>
-                    </div>
-                    <h1 className="xx-title">{campTitle}</h1>
-                    <small className="xx-subtitle">{campSubtitle}</small>
-                    {activeTye === "generic" && <div className="my-6"></div>}
-                    {activeTye === "emoji" && (
-                      <div className="xx-action-area">
-                        <span className="xx-emoji xx-actions" action="1"></span>
-                        <span className="xx-emoji xx-actions" action="2"></span>
-                        <span className="xx-emoji xx-actions" action="3"></span>
-                        <span className="xx-emoji xx-actions" action="4"></span>
-                        <span className="xx-emoji xx-actions" action="5"></span>
-                      </div>
-                    )}
-                    {activeTye === "rating" && (
-                      <div className="xx-action-area">
-                        <span className="xx-star xx-actions" action="1"></span>
-                        <span className="xx-star xx-actions" action="2"></span>
-                        <span className="xx-star xx-actions" action="3"></span>
-                        <span className="xx-star xx-actions" action="4"></span>
-                        <span className="xx-star xx-actions" action="5"></span>
-                      </div>
-                    )}
-                    {activeTye === "vote" && (
-                      <div className="xx-action-area">
-                        <span className="xx-thumb xx-actions" action="1"></span>
-                        <span className="xx-thumb xx-actions" action="2"></span>
-                      </div>
-                    )}
-                    {allowName && (
-                      <input
-                        className="xx-input-area"
-                        placeholder="Full name"
-                        name="name"
-                        required=""
-                      />
-                    )}
-                    {allowEmail && (
-                      <input
-                        className="xx-input-area"
-                        placeholder="Email address"
-                        name="name"
-                        required=""
-                      />
-                    )}
-                    {allowText && (
-                      <textarea
-                        className="xx-input-area"
-                        name="comment"
-                        placeholder="say something. . ."
-                        rows="5"
-                        required=""
-                      ></textarea>
-                    )}
+          <Widget
+            allowEmail={allowEmail}
+            allowName={allowName}
+            allowText={allowText}
+            campTitle={campTitle}
+            campSubtitle={campSubtitle}
+            activeTye={activeTye}
+          />
+        </div>
 
-                    <input
-                      type="hidden"
-                      name="campaignID"
-                      value="65cd634647173f19e14c205f"
-                    />
-                    <button type="button">submit </button>
-                  </div>
-                </div>
-                <div className="flex justify-end">
-                  <div className="xx-bubble">
-                    <span class="close xx-pop"></span>
-                  </div>
-                </div>
-              </div>
-            </div>
+        <div className="flex col-span-12 justify-center my-6 mb-24 gap-4">
+          <Button
+            onClick={() => setExitModal(true)}
+            className="h-12 rounded-full bg-slate-300"
+          >
+            Cancel
+          </Button>
+          <Button
+            loading={isLoading}
+            className="h-12 rounded-full"
+            type={"primary"}
+            htmlType="submit"
+          >
+            Save Campaign
+          </Button>
+        </div>
+      </Form>
+
+      <Modal
+        open={exitModal}
+        onCancel={() => setExitModal(!exitModal)}
+        onOk={() => navigate("../campaigns")}
+      >
+        <div className="py-16 text-center">
+          <QuestionCircleOutlined className="text-blue-300 text-4xl" />
+          <h3 className="text-2xl font-bold pt-4"> Are you sure?</h3>
+          <p className="text-slate-500">Your campaign will not be saved</p>
+        </div>
+      </Modal>
+      <Modal
+        open={completeModal}
+        onCancel={() => {
+          messageApi.info("copied to clipboard");
+          copy(`<script src="${embedURL.toString()}"></script>`);
+        }}
+        okText="done"
+        cancelText="copy"
+        onOk={() => navigate("../campaigns")}
+      >
+        <div className="py-16 text-center">
+          <CheckCircleOutlined className="text-green-300 text-4xl" />
+          <h3 className="text-2xl font-bold pt-4"> Campaign Started</h3>
+          <p className="text-slate-500">
+            copy and paste the html code below to receive feedback
+          </p>
+
+          <div className="mt-8 p-4 rounded-lg bg-slate-200">
+            <code>
+              <span className="w-full overflow-x-scroll text-nowrap py-4 block">
+                &lt;script src="{embedURL}" &gt; &lt;/script&gt;
+              </span>
+            </code>
           </div>
         </div>
-      </div>
-      <div className="flex justify-center my-4 gap-4">
-        <Button className="h-12 rounded-full bg-slate-300">Cancel</Button>
-        <Button className="h-12 rounded-full" type={"primary"}>
-          Save Campaign
-        </Button>
-      </div>
+      </Modal>
     </div>
   );
 };

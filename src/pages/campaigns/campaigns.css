@@ -11,10 +11,18 @@
 
 
 .listbox {
-  box-shadow: 0 2px 2px #e3e3e3;
+  /* box-shadow: 0 2px 2px #e3e3e3; */
+    background-color: #fbfbff;
+  
+  }
 
+.listbox .copx {
+  display: none;
 }
 
+.listbox:hover .copx {
+  display: block;
+}
 input,
 .ant-select-selector,
 .yield {
@@ -27,7 +35,7 @@ input:focus,
   background: transparent !important;
 }
 
-.xx-emoji span {
+.vvx-emoji span {
   position: absolute;
   font-weight: 800;
   color: black;

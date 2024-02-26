@@ -8,29 +8,29 @@
 
 
 
-.xx-widget.isActive {
+.vvx-widget.isActive {
     display: block
 }
 
-.xx-subtitle,
-.xx-title {
+.vvx-subtitle,
+.vvx-title {
     text-align: center;
     font-family: Inter, sans-serif;
     display: block
 }
 
-.xx-title {
+.vvx-title {
     margin: 0;
     margin-bottom: 6px;
     font-size: 20px;
     color: #101828
 }
 
-.xx-subtitle {
+.vvx-subtitle {
     color: #454b57
 }
 
-.xx-widget-box {
+.vvx-widget-box {
     background-color: #fff;
     box-shadow: rgba(0, 0, 0, .16) 0 5px 40px;
     border-radius: 12px;
@@ -41,7 +41,7 @@
     padding: 35px 25px
 }
 
-.xx-action-area {
+.vvx-action-area {
     padding: 20px 0;
     display: flex;
     justify-content: center;
@@ -50,8 +50,8 @@
     color: #f4c01e
 }
 
-.xx-thumb,
-.xx-thumb:nth-child(2) {
+.vvx-thumb,
+.vvx-thumb:nth-child(2) {
     background: url('../../assets/thumbup1.svg');
     padding: 15px;
     background-size: cover;
@@ -62,14 +62,14 @@
     -webkit-filter: grayscale(100%)
 }
 
-.xx-action-area.two .xx-thumb:nth-child(2),
-.xx-thumb:nth-child(2):hover {
+.vvx-action-area.two .vvx-thumb:nth-child(2),
+.vvx-thumb:nth-child(2):hover {
     filter: grayscale(0%);
     opacity: 1;
     -webkit-filter: grayscale(0%)
 }
 
-.xx-thumb:first-child {
+.vvx-thumb:first-child {
     background: url('../../assets/thumbdown1.svg');
     padding: 15px;
     background-size: cover;
@@ -79,15 +79,15 @@
     -webkit-filter: grayscale(100%)
 }
 
-.xx-action-area.one .xx-thumb:first-child,
-.xx-thumb:first-child:hover {
+.vvx-action-area.one .vvx-thumb:first-child,
+.vvx-thumb:first-child:hover {
     filter: grayscale(0%);
     opacity: 1;
     -webkit-filter: grayscale(0%)
 }
 
-.xx-thumb:first-child:hover::after,
-.xx-thumb:nth-child(2):hover::after {
+.vvx-thumb:first-child:hover::after,
+.vvx-thumb:nth-child(2):hover::after {
     content: 'Dislike';
     display: block;
     position: absolute;
@@ -98,13 +98,13 @@
     color: #454b57
 }
 
-.xx-thumb:nth-child(2):hover::after {
+.vvx-thumb:nth-child(2):hover::after {
     content: '  Like'
 }
 
-.xx-emoji {
+.vvx-emoji {
     background: url('../../assets/emoji1.svg');
-    padding: 20px;
+    padding: 15px;
     background-size: cover;
     cursor: pointer;
     filter: grayscale(100%);
@@ -112,70 +112,66 @@
     -webkit-filter: grayscale(100%)
 }
 
-.xx-action-area.one .xx-emoji:first-child,
-.xx-emoji:first-child:hover {
+.vvx-action-area.one .vvx-emoji:first-child,
+.vvx-emoji:first-child:hover {
     filter: grayscale(0%);
     opacity: 1;
     -webkit-filter: grayscale(0%)
 }
 
-.xx-emoji:nth-child(2) {
+.vvx-emoji:nth-child(2) {
     background: url('../../assets/emoji2.svg');
-    padding: 20px;
     background-size: cover;
     cursor: pointer
 }
 
-.xx-action-area.two .xx-emoji:nth-child(2),
-.xx-emoji:nth-child(2):hover {
+.vvx-action-area.two .vvx-emoji:nth-child(2),
+.vvx-emoji:nth-child(2):hover {
     filter: grayscale(0%);
     opacity: 1;
     -webkit-filter: grayscale(0%)
 }
 
-.xx-emoji:nth-child(3) {
+.vvx-emoji:nth-child(3) {
     background: url('../../assets/emoji3.svg');
-    padding: 20px;
     background-size: cover;
     cursor: pointer
 }
 
-.xx-action-area.three .xx-emoji:nth-child(3),
-.xx-emoji:nth-child(3):hover {
+.vvx-action-area.three .vvx-emoji:nth-child(3),
+.vvx-emoji:nth-child(3):hover {
     filter: grayscale(0%);
     opacity: 1;
     -webkit-filter: grayscale(0%)
 }
 
-.xx-emoji:nth-child(4) {
+.vvx-emoji:nth-child(4) {
     background: url('../../assets/emoji4.svg');
-    padding: 20px;
     background-size: cover;
     cursor: pointer
 }
 
-.xx-action-area.four .xx-emoji:nth-child(4),
-.xx-emoji:nth-child(4):hover {
+.vvx-action-area.four .vvx-emoji:nth-child(4),
+.vvx-emoji:nth-child(4):hover {
     filter: grayscale(0%);
     opacity: 1;
     -webkit-filter: grayscale(0%)
 }
 
-.xx-emoji:nth-child(5) {
+.vvx-emoji:nth-child(5) {
     background: url('../../assets/emoji5.svg');
-    padding: 20px;
     background-size: cover;
     cursor: pointer
 }
 
-.xx-action-area.five .xx-emoji:nth-child(5),
-.xx-emoji:nth-child(5):hover {
+.vvx-action-area.five .vvx-emoji:nth-child(5),
+.vvx-emoji:nth-child(5):hover {
     filter: grayscale(0%);
     opacity: 1;
     -webkit-filter: grayscale(0%)
 }
 
-.xx-star {
+.vvx-star {
     background: url('../../assets/star-checked.svg');
     padding: 15px;
     background-size: cover;
@@ -185,42 +181,42 @@
     -webkit-filter: grayscale(100%)
 }
 
-.xx-action-area.one .xx-star:first-child,
-.xx-star:first-child:hover {
+.vvx-action-area.one .vvx-star:first-child,
+.vvx-star:first-child:hover {
     filter: grayscale(0%);
     opacity: 1;
     -webkit-filter: grayscale(0%)
 }
 
-.xx-action-area.two .xx-star:nth-child(-n+2),
-.xx-star:nth-child(-n+2):hover {
+.vvx-action-area.two .vvx-star:nth-child(-n+2),
+.vvx-star:nth-child(-n+2):hover {
     filter: grayscale(0%);
     opacity: 1;
     -webkit-filter: grayscale(0%)
 }
 
-.xx-action-area.three .xx-star:nth-child(-n+3),
-.xx-star:nth-child(-n+3):hover {
+.vvx-action-area.three .vvx-star:nth-child(-n+3),
+.vvx-star:nth-child(-n+3):hover {
     filter: grayscale(0%);
     opacity: 1;
     -webkit-filter: grayscale(0%)
 }
 
-.xx-action-area.four .xx-star:nth-child(-n+4),
-.xx-star:nth-child(-n+4):hover {
+.vvx-action-area.four .vvx-star:nth-child(-n+4),
+.vvx-star:nth-child(-n+4):hover {
     filter: grayscale(0%);
     opacity: 1;
     -webkit-filter: grayscale(0%)
 }
 
-.xx-action-area.five .xx-star:nth-child(-n+5),
-.xx-star:nth-child(-n+5):hover {
+.vvx-action-area.five .vvx-star:nth-child(-n+5),
+.vvx-star:nth-child(-n+5):hover {
     filter: grayscale(0%);
     opacity: 1;
     -webkit-filter: grayscale(0%)
 }
 
-.xx-input-area {
+.vvx-input-area {
     border: 1px solid #dfe2e7;
     display: block;
     width: 100%;
@@ -236,17 +232,17 @@
     -o-border-radius: 8px
 }
 
-.xx-input-area:focus {
+.vvx-input-area:focus {
     outline: 0;
     border-color: #0390fc3f;
     box-shadow: 0 0 25px #0390fc1b
 }
 
-.xx-input-area::placeholder {
+.vvx-input-area::placeholder {
     color: #949eb3
 }
 
-.xx-widget button {
+.vvx-widget button {
     width: 100%;
     padding: 12px;
     color: #fff;
@@ -263,7 +259,7 @@
     margin-top: 15px
 }
 
-.xx-bubble {
+.vvx-bubble {
 
     padding: 10px;
     display: flex;
@@ -277,19 +273,19 @@
     background-color: #0390fc
 }
 
-.xx-bubble span.pop {
+.vvx-bubble span.pop {
     background: url('../../assets/bubble.svg');
     background-size: contain;
     padding: 16px
 }
 
-.xx-bubble span.close {
+.vvx-bubble span.close {
     background: url('../../assets/close.svg');
     background-size: contain;
     padding: 16px
 }
 
-.xx-submited {
+.vvx-submited {
     background: #fff;
     position: absolute;
     height: 100%;
@@ -302,22 +298,22 @@
     align-items: center
 }
 
-.xx-submited.isActive {
+.vvx-submited.isActive {
     display: flex
 }
 
-.xx-checked {
+.vvx-checked {
     display: flex;
     justify-content: center
 }
 
-.xx-submited .xx-txt {
+.vvx-submited .vvx-txt {
     font-family: Inter, sans-serif;
     font-size: 1rem;
     color: #101828
 }
 
-.xx-checked span {
+.vvx-checked span {
     background: url(../../assets/check.svg);
     background-size: contain;
     height: 70px;
@@ -380,17 +376,17 @@
     }
 }
 
-.xx-slide {
+.vvx-slide {
     -webkit-animation: slide-top .5s cubic-bezier(.25, .46, .45, .94) both;
     animation: slide-top .5s cubic-bezier(.25, .46, .45, .94) both
 }
 
-.xx-pop {
+.vvx-pop {
     -webkit-animation: scale-in-center .5s cubic-bezier(.25, .46, .45, .94) both;
     animation: scale-in-center .5s cubic-bezier(.25, .46, .45, .94) both
 }
 
-.xx-loader {
+.vvx-loader {
     width: 15px;
     height: 15px;
     border: 3px solid #fff;
@@ -413,4 +409,71 @@
     100% {
         transform: rotate(360deg)
     }
+}
+.rating {
+    white-space: nowrap !important;
+}
+
+.rating span {
+    background: url('../../assets/star-checked.svg');
+    height: 13px;
+    width: 13px;
+    display: inline-block;
+    background-size: cover;
+}
+
+.emoji1 {
+    background: url('../../assets/emoji1.svg');
+    height: 25px;
+    width: 25px;
+    display: inline-block;
+    background-size: cover;
+}
+
+.emoji2 {
+    background: url('../../assets/emoji2.svg');
+    height: 25px;
+    width: 25px;
+    display: inline-block;
+    background-size: cover;
+}
+
+.emoji3 {
+    background: url('../../assets/emoji3.svg');
+    height: 25px;
+    width: 25px;
+    display: inline-block;
+    background-size: cover;
+}
+
+.emoji4 {
+    background: url('../../assets/emoji4.svg');
+    height: 25px;
+    width: 25px;
+    display: inline-block;
+    background-size: cover;
+}
+
+.emoji5 {
+    background: url('../../assets/emoji5.svg');
+    height: 25px;
+    width: 25px;
+    display: inline-block;
+    background-size: cover;
+}
+
+.vote1 {
+    background: url('../../assets/thumbdown1.svg');
+    height: 25px;
+    width: 25px;
+    display: inline-block;
+    background-size: cover;
+}
+
+.vote2 {
+    background: url('../../assets/thumbup1.svg');
+    height: 25px;
+    width: 25px;
+    display: inline-block;
+    background-size: cover;
 }

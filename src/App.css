@@ -2,15 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter+Tight:wght@100;300;400&family=Inter:wght@100..900&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@100..900&display=swap&family=Abril+Fatface&display=swap');
 
 body {
   margin: 0;
   font-family: 'Inter' sans-serif !important;
+  color: #303031;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: rgba(245, 245, 245);
+  /* background-color: rgba(245, 245, 245); */
+    background-color: rgb(255, 255, 255);
 }
 
 h1,
@@ -25,6 +26,9 @@ div {
   font-family: 'Inter' sans-serif !important;
 }
 
+.fatface {
+  font-family: "DM Serif Display", serif;
+}
 .input-area label {
   color: #4f575c;
   font-weight: 400;
@@ -36,15 +40,17 @@ div {
 }
 
 .logo span {
-  font-size: 1.3rem;
+  font-size: 1.5rem;
   font-weight: 800;
   /* letter-spacing: .2rem; */
+  font-family: "Abril Fatface", serif;
   text-transform: lowercase;
 }
 
 .logo svg {
   height: 2rem;
   width: 2rem;
+  display: none;
 }
 
 
@@ -55,10 +61,12 @@ div {
 }
 
 .logo>span {
-  color: #ff9341;
+  color: #0390FC;
 }
 
-
+.container {
+  margin: 0 auto;
+}
 
 @media (max-width: 640px) {
   .container {
@@ -74,19 +82,19 @@ div {
 
 @media (min-width: 1024px) {
   .container {
-    padding: 0 150px;
+    padding: 0 100px;
   }
 }
 
 @media (min-width: 1280px) {
   .container {
-    padding: 0 180px;
+    padding: 0 120px;
   }
 }
 
 @media (min-width: 1536px) {
   .container {
-    padding: 0 200px;
+    padding: 0 150px;
   }
 }
 
