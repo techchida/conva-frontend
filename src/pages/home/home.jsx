@@ -7,7 +7,7 @@ import Footer from "../../components/footer/footer";
 
 const Home = () => {
   return (
-    <div>
+    <div className="bg-white mb-20">
       <nav>
         <div className="container">
           <div className="flex justify-between items-center py-8">
@@ -22,7 +22,7 @@ const Home = () => {
 
             <div className="flex gap-10 items-center">
               <Link to="./sign-in">
-                <Button className="rounded-full h-12 px-8"> Sign in </Button>
+                <Button className="rounded-full h-10 px-6"> Sign in </Button>
               </Link>
             </div>
           </div>
