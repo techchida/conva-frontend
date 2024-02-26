@@ -59,7 +59,7 @@ const Widget = (props) => {
           </div>
           <div className="flex justify-end">
             <div className="vvx-bubble">
-              <span class="close vvx-pop"></span>
+              <span className="close vvx-pop"></span>
             </div>
           </div>
         </div>
