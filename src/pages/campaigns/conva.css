@@ -1,0 +1,479 @@
+/**
+ * Minified by jsDelivr using clean-css v5.3.2.
+ * Original file: /gh/techchida/conva-backend@master/public/conva.css
+ *
+ * Do NOT use SRI with dynamically generated files! More information: https://www.jsdelivr.com/using-sri-with-dynamic-files
+ */
+@import url(https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter+Tight:wght@100;300;400&family=Inter:wght@100..900&display=swap);
+
+
+
+.vvx-widget.isActive {
+    display: block
+}
+
+.vvx-subtitle,
+.vvx-title {
+    text-align: center;
+    font-family: Inter, sans-serif;
+    display: block
+}
+
+.vvx-title {
+    margin: 0;
+    margin-bottom: 6px;
+    font-size: 20px;
+    color: #101828
+}
+
+.vvx-subtitle {
+    color: #454b57
+}
+
+.vvx-widget-box {
+    background-color: #fff;
+    box-shadow: rgba(0, 0, 0, .16) 0 5px 40px;
+    border-radius: 12px;
+    -webkit-border-radius: 12px;
+    -moz-border-radius: 12px;
+    -ms-border-radius: 12px;
+    -o-border-radius: 12px;
+    padding: 35px 25px
+}
+
+.vvx-action-area {
+    padding: 20px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    color: #f4c01e
+}
+
+.vvx-thumb,
+.vvx-thumb:nth-child(2) {
+    background: url('../../assets/thumbup1.svg');
+    padding: 15px;
+    background-size: cover;
+    cursor: pointer;
+    margin-right: 10px;
+    filter: grayscale(100%);
+    opacity: .6;
+    -webkit-filter: grayscale(100%)
+}
+
+.vvx-action-area.two .vvx-thumb:nth-child(2),
+.vvx-thumb:nth-child(2):hover {
+    filter: grayscale(0%);
+    opacity: 1;
+    -webkit-filter: grayscale(0%)
+}
+
+.vvx-thumb:first-child {
+    background: url('../../assets/thumbdown1.svg');
+    padding: 15px;
+    background-size: cover;
+    cursor: pointer;
+    filter: grayscale(100%);
+    opacity: .6;
+    -webkit-filter: grayscale(100%)
+}
+
+.vvx-action-area.one .vvx-thumb:first-child,
+.vvx-thumb:first-child:hover {
+    filter: grayscale(0%);
+    opacity: 1;
+    -webkit-filter: grayscale(0%)
+}
+
+.vvx-thumb:first-child:hover::after,
+.vvx-thumb:nth-child(2):hover::after {
+    content: 'Dislike';
+    display: block;
+    position: absolute;
+    font-family: Inter, sans-serif;
+    font-size: small;
+    margin-top: 15px;
+    margin-left: -20px;
+    color: #454b57
+}
+
+.vvx-thumb:nth-child(2):hover::after {
+    content: '  Like'
+}
+
+.vvx-emoji {
+    background: url('../../assets/emoji1.svg');
+    padding: 15px;
+    background-size: cover;
+    cursor: pointer;
+    filter: grayscale(100%);
+    opacity: .6;
+    -webkit-filter: grayscale(100%)
+}
+
+.vvx-action-area.one .vvx-emoji:first-child,
+.vvx-emoji:first-child:hover {
+    filter: grayscale(0%);
+    opacity: 1;
+    -webkit-filter: grayscale(0%)
+}
+
+.vvx-emoji:nth-child(2) {
+    background: url('../../assets/emoji2.svg');
+    background-size: cover;
+    cursor: pointer
+}
+
+.vvx-action-area.two .vvx-emoji:nth-child(2),
+.vvx-emoji:nth-child(2):hover {
+    filter: grayscale(0%);
+    opacity: 1;
+    -webkit-filter: grayscale(0%)
+}
+
+.vvx-emoji:nth-child(3) {
+    background: url('../../assets/emoji3.svg');
+    background-size: cover;
+    cursor: pointer
+}
+
+.vvx-action-area.three .vvx-emoji:nth-child(3),
+.vvx-emoji:nth-child(3):hover {
+    filter: grayscale(0%);
+    opacity: 1;
+    -webkit-filter: grayscale(0%)
+}
+
+.vvx-emoji:nth-child(4) {
+    background: url('../../assets/emoji4.svg');
+    background-size: cover;
+    cursor: pointer
+}
+
+.vvx-action-area.four .vvx-emoji:nth-child(4),
+.vvx-emoji:nth-child(4):hover {
+    filter: grayscale(0%);
+    opacity: 1;
+    -webkit-filter: grayscale(0%)
+}
+
+.vvx-emoji:nth-child(5) {
+    background: url('../../assets/emoji5.svg');
+    background-size: cover;
+    cursor: pointer
+}
+
+.vvx-action-area.five .vvx-emoji:nth-child(5),
+.vvx-emoji:nth-child(5):hover {
+    filter: grayscale(0%);
+    opacity: 1;
+    -webkit-filter: grayscale(0%)
+}
+
+.vvx-star {
+    background: url('../../assets/star-checked.svg');
+    padding: 15px;
+    background-size: cover;
+    cursor: pointer;
+    filter: grayscale(100%);
+    opacity: .6;
+    -webkit-filter: grayscale(100%)
+}
+
+.vvx-action-area.one .vvx-star:first-child,
+.vvx-star:first-child:hover {
+    filter: grayscale(0%);
+    opacity: 1;
+    -webkit-filter: grayscale(0%)
+}
+
+.vvx-action-area.two .vvx-star:nth-child(-n+2),
+.vvx-star:nth-child(-n+2):hover {
+    filter: grayscale(0%);
+    opacity: 1;
+    -webkit-filter: grayscale(0%)
+}
+
+.vvx-action-area.three .vvx-star:nth-child(-n+3),
+.vvx-star:nth-child(-n+3):hover {
+    filter: grayscale(0%);
+    opacity: 1;
+    -webkit-filter: grayscale(0%)
+}
+
+.vvx-action-area.four .vvx-star:nth-child(-n+4),
+.vvx-star:nth-child(-n+4):hover {
+    filter: grayscale(0%);
+    opacity: 1;
+    -webkit-filter: grayscale(0%)
+}
+
+.vvx-action-area.five .vvx-star:nth-child(-n+5),
+.vvx-star:nth-child(-n+5):hover {
+    filter: grayscale(0%);
+    opacity: 1;
+    -webkit-filter: grayscale(0%)
+}
+
+.vvx-input-area {
+    border: 1px solid #dfe2e7;
+    display: block;
+    width: 100%;
+    margin-bottom: 15px;
+    padding: 12px 15px;
+    font-family: Inter, sans-serif;
+    color: #101828;
+    font-size: 15px;
+    border-radius: 8px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -ms-border-radius: 8px;
+    -o-border-radius: 8px
+}
+
+.vvx-input-area:focus {
+    outline: 0;
+    border-color: #0390fc3f;
+    box-shadow: 0 0 25px #0390fc1b
+}
+
+.vvx-input-area::placeholder {
+    color: #949eb3
+}
+
+.vvx-widget button {
+    width: 100%;
+    padding: 12px;
+    color: #fff;
+    font-family: Inter, sans-serif;
+    font-size: 15px;
+    background: #0390fc;
+    font-family: Inter, sans-serif;
+    border-radius: 8px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -ms-border-radius: 8px;
+    -o-border-radius: 8px;
+    border: none;
+    margin-top: 15px
+}
+
+.vvx-bubble {
+
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    border-radius: 50%;
+    box-shadow: 0 1px 6px 0 rgba(0, 0, 0, .06), 0 2px 32px 0 rgba(0, 0, 0, .16);
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    background-color: #0390fc
+}
+
+.vvx-bubble span.pop {
+    background: url('../../assets/bubble.svg');
+    background-size: contain;
+    padding: 16px
+}
+
+.vvx-bubble span.close {
+    background: url('../../assets/close.svg');
+    background-size: contain;
+    padding: 16px
+}
+
+.vvx-submited {
+    background: #fff;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    margin: -25px 0 0 -25px;
+    border-radius: 12px;
+    z-index: 1;
+    display: none;
+    justify-content: center;
+    align-items: center
+}
+
+.vvx-submited.isActive {
+    display: flex
+}
+
+.vvx-checked {
+    display: flex;
+    justify-content: center
+}
+
+.vvx-submited .vvx-txt {
+    font-family: Inter, sans-serif;
+    font-size: 1rem;
+    color: #101828
+}
+
+.vvx-checked span {
+    background: url(../../assets/check.svg);
+    background-size: contain;
+    height: 70px;
+    width: 70px;
+    background-repeat: no-repeat
+}
+
+@-webkit-keyframes slide-top {
+    0% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0)
+    }
+
+    100% {
+        -webkit-transform: translateY(-20px);
+        transform: translateY(-20px)
+    }
+}
+
+@keyframes slide-top {
+    0% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0)
+    }
+
+    100% {
+        -webkit-transform: translateY(-20px);
+        transform: translateY(-20px);
+        -moz-transform: translateY(-20px);
+        -ms-transform: translateY(-20px);
+        -o-transform: translateY(-20px)
+    }
+}
+
+@-webkit-keyframes scale-in-center {
+    0% {
+        -webkit-transform: scale(0);
+        transform: scale(0);
+        opacity: 1
+    }
+
+    100% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+        opacity: 1
+    }
+}
+
+@keyframes scale-in-center {
+    0% {
+        -webkit-transform: scale(0);
+        transform: scale(0);
+        opacity: 1
+    }
+
+    100% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+        opacity: 1
+    }
+}
+
+.vvx-slide {
+    -webkit-animation: slide-top .5s cubic-bezier(.25, .46, .45, .94) both;
+    animation: slide-top .5s cubic-bezier(.25, .46, .45, .94) both
+}
+
+.vvx-pop {
+    -webkit-animation: scale-in-center .5s cubic-bezier(.25, .46, .45, .94) both;
+    animation: scale-in-center .5s cubic-bezier(.25, .46, .45, .94) both
+}
+
+.vvx-loader {
+    width: 15px;
+    height: 15px;
+    border: 3px solid #fff;
+    border-bottom-color: #719df1;
+    border-radius: 50%;
+    display: inline-block;
+    box-sizing: border-box;
+    animation: rotation 1s linear infinite;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%
+}
+
+@keyframes rotation {
+    0% {
+        transform: rotate(0)
+    }
+
+    100% {
+        transform: rotate(360deg)
+    }
+}
+.rating {
+    white-space: nowrap !important;
+}
+
+.rating span {
+    background: url('../../assets/star-checked.svg');
+    height: 13px;
+    width: 13px;
+    display: inline-block;
+    background-size: cover;
+}
+
+.emoji1 {
+    background: url('../../assets/emoji1.svg');
+    height: 25px;
+    width: 25px;
+    display: inline-block;
+    background-size: cover;
+}
+
+.emoji2 {
+    background: url('../../assets/emoji2.svg');
+    height: 25px;
+    width: 25px;
+    display: inline-block;
+    background-size: cover;
+}
+
+.emoji3 {
+    background: url('../../assets/emoji3.svg');
+    height: 25px;
+    width: 25px;
+    display: inline-block;
+    background-size: cover;
+}
+
+.emoji4 {
+    background: url('../../assets/emoji4.svg');
+    height: 25px;
+    width: 25px;
+    display: inline-block;
+    background-size: cover;
+}
+
+.emoji5 {
+    background: url('../../assets/emoji5.svg');
+    height: 25px;
+    width: 25px;
+    display: inline-block;
+    background-size: cover;
+}
+
+.vote1 {
+    background: url('../../assets/thumbdown1.svg');
+    height: 25px;
+    width: 25px;
+    display: inline-block;
+    background-size: cover;
+}
+
+.vote2 {
+    background: url('../../assets/thumbup1.svg');
+    height: 25px;
+    width: 25px;
+    display: inline-block;
+    background-size: cover;
+}
