@@ -77,6 +77,7 @@ const SignUp = () => {
             placeholder="create a password"
             size="large"
             variant="filled"
+            type="password"
           />
         </Form.Item>
         <div className="flex py-4 justify-end">

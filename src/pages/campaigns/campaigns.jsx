@@ -23,7 +23,6 @@ const Campaigns = () => {
   const [payload, setPayload] = useState({});
   const location = useLocation();
 
-  console.log(location);
 
   const [messageApi, contextHolder] = message.useMessage();
 
@@ -40,7 +39,6 @@ const Campaigns = () => {
       return await appServices.getCampaigns(page);
     };
     getCampaigns(page).then((res) => {
-      console.log(res);
       if (res.status === 200) {
         setPayload(res.data);
         setCampaigns(res.data.campaigns);
@@ -58,9 +56,9 @@ const Campaigns = () => {
           <div>
             <h3 className="font-black text-xl  text-slate-800">My Campaigns</h3>
             {isLoading ? (
-              <p className="text-slate-400">
+              <div className="text-slate-400">
                 <Spin size="small" /> Active
-              </p>
+              </div>
             ) : (
               <p className="text-slate-400">{payload.totalDocs} Active</p>
             )}

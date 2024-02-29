@@ -64,7 +64,7 @@ const SignIn = () => {
           rules={authValidation.email}
         >
           <Input
-            placeholder="jane@doe.com"
+            placeholder="Email address"
             size="large"
             variant="filled"
             name="email"
@@ -76,9 +76,10 @@ const SignIn = () => {
           rules={[{ require: true, message: "please enter your password" }]}
         >
           <Input
-            placeholder="create a password"
+            placeholder="Enter password"
             size="large"
             variant="filled"
+            type="password"
           />
         </Form.Item>
         <div className="flex py-4 justify-end">
