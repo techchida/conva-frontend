@@ -64,8 +64,7 @@ const Leads = () => {
 
       messageApi.error("oops! somehing went wrong. please try again ");
     },
-    onSettled: (f) => {
-      console.log(f);
+    onSettled: () => {
       setLoading(false);
     },
   });

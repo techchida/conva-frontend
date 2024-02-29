@@ -64,7 +64,6 @@ const NewCampaign = () => {
         onFinish={(payload) => {
           setIsLoading(true);
           mutate(payload);
-          console.log(payload);
         }}
         className="lg:grid grid-cols-12 gap-16 gap-y-10 mt-16 justify-between  builder"
       >

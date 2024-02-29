@@ -9,7 +9,6 @@ export const authServices = {
   },
   async profile() {
     const x = await instance.get("/users/profile");
-    console.log(x);
     return x;
   },
 };
@@ -22,7 +21,6 @@ export const appServices = {
     return await instance.get(`/campaigns/list?page=${page}`);
   },
   async xCampaign(payload) {
-    console.log(payload);
     return await instance.delete(`/campaigns/delete/${payload}`);
   },
   async getLeads(params) {
